@@ -1,0 +1,486 @@
+/* ========================================
+   テックインフォ株式会社 - Style
+   design-style.md 準拠
+   ======================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1a1a2e;
+  background: #ffffff;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Container --- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Header --- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1a1a2e;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #4361ee;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 32px;
+  height: 32px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #1a1a2e;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Hero --- */
+.hero {
+  margin-top: 64px;
+  background: #1a1a2e;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px;
+}
+
+.hero-inner {
+  max-width: 700px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 1.125rem;
+  line-height: 2;
+  color: #c8c8d4;
+}
+
+/* --- Section --- */
+.section {
+  padding: 80px 0;
+}
+
+.section-alt {
+  background: #f8f9fa;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #4361ee;
+  margin: 12px auto 0;
+}
+
+.section-text {
+  font-size: 0.9375rem;
+  line-height: 2;
+  color: #1a1a2e;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section-text + .section-text {
+  margin-top: 16px;
+}
+
+/* --- Cards (Services) --- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 32px 28px;
+}
+
+.card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #4361ee;
+  border-radius: 50%;
+  color: #4361ee;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  line-height: 1.9;
+  color: #6c757d;
+}
+
+/* --- About --- */
+.about-message {
+  margin-bottom: 24px;
+}
+
+.about-sign {
+  text-align: right;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 48px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-table {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.info-table th,
+.info-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9375rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.info-table th {
+  width: 120px;
+  font-weight: 500;
+  color: #6c757d;
+  white-space: nowrap;
+}
+
+.info-table td a {
+  color: #4361ee;
+}
+
+.info-table td a:hover {
+  text-decoration: underline;
+}
+
+/* --- Contact --- */
+.contact-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 32px 40px;
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.contact-item:hover {
+  border-color: #4361ee;
+}
+
+.contact-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.contact-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4361ee;
+}
+
+/* --- Footer --- */
+.footer {
+  background: #1a1a2e;
+  color: #c8c8d4;
+  padding: 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  font-size: 0.8125rem;
+}
+
+.footer-link {
+  font-size: 0.8125rem;
+  color: #c8c8d4;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+/* --- Privacy Policy --- */
+.privacy-section {
+  margin-top: 64px;
+}
+
+.privacy-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.privacy-content p {
+  font-size: 0.9375rem;
+  line-height: 2;
+  margin-bottom: 16px;
+}
+
+.privacy-content h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.privacy-content ul {
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+
+.privacy-content li {
+  font-size: 0.9375rem;
+  line-height: 2;
+}
+
+.privacy-content a {
+  color: #4361ee;
+}
+
+.privacy-content a:hover {
+  text-decoration: underline;
+}
+
+.privacy-date {
+  margin-top: 40px;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* Header */
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 24px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+
+  /* Section */
+  .section {
+    padding: 56px 0;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 32px;
+  }
+
+  /* Cards */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* About */
+  .info-table th {
+    display: block;
+    padding-bottom: 4px;
+    border-bottom: none;
+  }
+
+  .info-table td {
+    display: block;
+    padding-top: 0;
+  }
+
+  /* Contact */
+  .contact-methods {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .contact-item {
+    width: 100%;
+    max-width: 320px;
+    padding: 24px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .section-text {
+    font-size: 0.875rem;
+  }
+}
