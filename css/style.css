@@ -1,6 +1,6 @@
 /* ========================================
-   テックインフォ株式会社 - Style
-   design-style.md 準拠
+   テックインフォ株式会社 - Style v3
+   design-style.md 準拠 + UI/UX Pro Max
    ======================================== */
 
 /* --- Reset & Base --- */
@@ -21,6 +21,8 @@ body {
   background: #ffffff;
   line-height: 1.8;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -32,6 +34,17 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* --- Focus visible (accessibility) --- */
+:focus-visible {
+  outline: 2px solid #4361ee;
+  outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* --- Container --- */
@@ -47,7 +60,9 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid #e9ecef;
   z-index: 100;
 }
@@ -63,9 +78,10 @@ img {
 }
 
 .logo {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: #1a1a2e;
 }
 
@@ -78,7 +94,9 @@ img {
   font-size: 0.875rem;
   font-weight: 500;
   color: #1a1a2e;
-  transition: color 0.2s;
+  padding: 8px 0;
+  transition: color 0.2s ease-out;
+  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -94,9 +112,9 @@ img {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
-  width: 32px;
-  height: 32px;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
 }
 
 .menu-toggle span {
@@ -104,7 +122,7 @@ img {
   width: 24px;
   height: 2px;
   background: #1a1a2e;
-  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(1) {
@@ -129,6 +147,17 @@ img {
   justify-content: center;
   text-align: center;
   padding: 140px 24px 120px;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(67, 97, 238, 0.3);
 }
 
 .hero-inner {
@@ -136,42 +165,49 @@ img {
 }
 
 .hero-label {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   color: #4361ee;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
 .hero-title {
-  font-size: 2.75rem;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .hero-sub {
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 2;
   color: #c8c8d4;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
 }
 
 .hero-cta {
   display: inline-block;
-  padding: 14px 48px;
-  border: 2px solid #4361ee;
-  color: #4361ee;
+  padding: 16px 52px;
+  background: #4361ee;
+  color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 500;
   letter-spacing: 0.06em;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s ease-out, transform 0.2s ease-out;
+  cursor: pointer;
 }
 
 .hero-cta:hover {
-  background: #4361ee;
-  color: #ffffff;
+  background: #3451d1;
+}
+
+.hero-cta:active {
+  transform: scale(0.98);
 }
 
 /* --- Numbers --- */
@@ -194,6 +230,7 @@ img {
 }
 
 .number-value {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: #1a1a2e;
@@ -228,6 +265,7 @@ img {
   text-align: center;
   margin-bottom: 40px;
   position: relative;
+  letter-spacing: 0.04em;
 }
 
 .section-title::after {
@@ -263,7 +301,7 @@ img {
 .cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 
 .card {
@@ -271,11 +309,12 @@ img {
   border: 1px solid #e9ecef;
   border-radius: 4px;
   padding: 32px 28px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 .card:hover {
   border-color: #4361ee;
+  box-shadow: 0 2px 12px rgba(67, 97, 238, 0.08);
 }
 
 .card-number {
@@ -287,7 +326,8 @@ img {
   border: 2px solid #4361ee;
   border-radius: 50%;
   color: #4361ee;
-  font-size: 1rem;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 0.875rem;
   font-weight: 700;
   margin-bottom: 16px;
 }
@@ -315,6 +355,7 @@ img {
   color: #1a1a2e;
   padding: 4px 0 4px 16px;
   position: relative;
+  line-height: 1.8;
 }
 
 .card-list li::before {
@@ -333,7 +374,7 @@ img {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 36px;
 }
 
 .strength-item {
@@ -343,6 +384,7 @@ img {
 }
 
 .strength-number {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #4361ee;
@@ -407,6 +449,7 @@ img {
 
 .info-table td a {
   color: #4361ee;
+  transition: color 0.2s ease-out;
 }
 
 .info-table td a:hover {
@@ -431,14 +474,17 @@ img {
   align-items: center;
   gap: 8px;
   padding: 32px 40px;
+  min-height: 44px;
   background: #ffffff;
   border: 1px solid #e9ecef;
   border-radius: 4px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+  cursor: pointer;
 }
 
 .contact-item:hover {
   border-color: #4361ee;
+  box-shadow: 0 2px 12px rgba(67, 97, 238, 0.08);
 }
 
 .contact-label {
@@ -448,6 +494,7 @@ img {
 }
 
 .contact-value {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: #4361ee;
@@ -473,7 +520,9 @@ img {
 .footer-link {
   font-size: 0.8125rem;
   color: #c8c8d4;
-  transition: color 0.2s;
+  transition: color 0.2s ease-out;
+  padding: 8px 0;
+  cursor: pointer;
 }
 
 .footer-link:hover {
@@ -530,13 +579,32 @@ img {
 /* --- Scroll Animation --- */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ========================================
@@ -555,15 +623,24 @@ img {
     top: 64px;
     left: 0;
     width: 100%;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid #e9ecef;
     flex-direction: column;
     padding: 16px 24px;
-    gap: 16px;
+    gap: 8px;
   }
 
   .nav.open {
     display: flex;
+  }
+
+  .nav-link {
+    padding: 12px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   /* Hero */
@@ -572,23 +649,23 @@ img {
   }
 
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .hero-sub {
     font-size: 1rem;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
   }
 
   .hero-cta {
-    padding: 12px 36px;
+    padding: 14px 40px;
     font-size: 0.875rem;
   }
 
   /* Numbers */
   .numbers {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 
   .numbers-section {
@@ -596,7 +673,11 @@ img {
   }
 
   .number-value {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .number-unit {
+    font-size: 0.8125rem;
   }
 
   /* Section */
@@ -661,7 +742,7 @@ img {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .hero-label {
@@ -670,5 +751,10 @@ img {
 
   .section-text {
     font-size: 0.875rem;
+  }
+
+  .numbers {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }

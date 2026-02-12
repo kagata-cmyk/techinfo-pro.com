@@ -7,7 +7,7 @@
   <meta name="description" content="テックインフォ株式会社 - 20年以上の経験と100社以上の構築実績。ネットワークインフラの設計・構築・運用からAI・DX支援まで、福岡から全国のIT課題を解決します。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,10 +16,10 @@
   <header class="header" id="top">
     <div class="header-inner">
       <a href="#top" class="logo">TECH INFO</a>
-      <button class="menu-toggle" aria-label="メニュー" aria-expanded="false">
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="メインナビゲーション">
         <a href="#services" class="nav-link">サービス</a>
         <a href="#strengths" class="nav-link">強み</a>
         <a href="#about" class="nav-link">会社情報</a>
@@ -39,18 +39,18 @@
   </section>
 
   <!-- Numbers -->
-  <section class="section numbers-section">
+  <section class="numbers-section" aria-label="実績">
     <div class="container">
       <div class="numbers">
-        <div class="number-item">
+        <div class="number-item fade-in">
           <span class="number-value">20<span class="number-unit">年以上</span></span>
           <span class="number-label">業界経験</span>
         </div>
-        <div class="number-item">
+        <div class="number-item fade-in">
           <span class="number-value">100<span class="number-unit">社以上</span></span>
           <span class="number-label">構築実績</span>
         </div>
-        <div class="number-item">
+        <div class="number-item fade-in">
           <span class="number-value">全国</span>
           <span class="number-label">対応エリア</span>
         </div>
@@ -77,49 +77,49 @@
       <h2 class="section-title">サービス</h2>
       <p class="section-lead">設計から運用まで、ITインフラのライフサイクル全体をカバーします。</p>
       <div class="cards">
-        <div class="card">
-          <div class="card-number">1</div>
+        <div class="card fade-in">
+          <div class="card-number" aria-hidden="true">1</div>
           <h3 class="card-title">ネットワーク設計・構築</h3>
           <p class="card-text">
             拠点間VPN、社内LAN、無線LAN環境の設計から構築まで。NEC、YAMAHA、Cisco、FortiGate等のマルチベンダー対応で、お客様の規模と要件に最適なネットワークを構築します。
           </p>
-          <ul class="card-list">
+          <ul class="card-list" aria-label="対応内容">
             <li>拠点間VPN / インターネットVPN</li>
             <li>社内LAN / 無線LAN設計</li>
             <li>ファイアウォール導入</li>
           </ul>
         </div>
-        <div class="card">
-          <div class="card-number">2</div>
+        <div class="card fade-in">
+          <div class="card-number" aria-hidden="true">2</div>
           <h3 class="card-title">運用・保守</h3>
           <p class="card-text">
             構築したネットワークの安定稼働を継続的にサポート。障害対応、コンフィグ管理、ファームウェア更新、セキュリティパッチ適用まで、日々の運用をトータルで支援します。
           </p>
-          <ul class="card-list">
+          <ul class="card-list" aria-label="対応内容">
             <li>24/365 障害対応</li>
             <li>定期メンテナンス</li>
             <li>構成変更・最適化</li>
           </ul>
         </div>
-        <div class="card">
-          <div class="card-number">3</div>
+        <div class="card fade-in">
+          <div class="card-number" aria-hidden="true">3</div>
           <h3 class="card-title">セキュリティ対策</h3>
           <p class="card-text">
             FortiGateをはじめとするUTMの導入・運用で、ネットワークセキュリティを強化。脅威の可視化からポリシー設計、定期レポートまで、包括的なセキュリティ運用を提供します。
           </p>
-          <ul class="card-list">
+          <ul class="card-list" aria-label="対応内容">
             <li>UTM / ファイアウォール運用</li>
             <li>脅威レポート・分析</li>
             <li>セキュリティポリシー策定</li>
           </ul>
         </div>
-        <div class="card">
-          <div class="card-number">4</div>
+        <div class="card fade-in">
+          <div class="card-number" aria-hidden="true">4</div>
           <h3 class="card-title">AI・DX支援</h3>
           <p class="card-text">
             AI技術の活用やデジタルトランスフォーメーションの推進を支援。業務自動化、データ分析基盤の構築、クラウド移行など、お客様のビジネス変革をテクノロジーでサポートします。
           </p>
-          <ul class="card-list">
+          <ul class="card-list" aria-label="対応内容">
             <li>業務プロセス自動化</li>
             <li>クラウド移行支援</li>
             <li>AI活用コンサルティング</li>
@@ -134,22 +134,22 @@
     <div class="container">
       <h2 class="section-title">選ばれる理由</h2>
       <div class="strengths">
-        <div class="strength-item">
-          <div class="strength-number">01</div>
+        <div class="strength-item fade-in">
+          <div class="strength-number" aria-hidden="true">01</div>
           <div class="strength-body">
             <h3 class="strength-title">マルチベンダー対応</h3>
             <p class="strength-text">NEC、YAMAHA、Cisco、FortiGate、NETGEAR など主要メーカーに精通。特定ベンダーに縛られず、要件に最適な機器を選定・設計します。</p>
           </div>
         </div>
-        <div class="strength-item">
-          <div class="strength-number">02</div>
+        <div class="strength-item fade-in">
+          <div class="strength-number" aria-hidden="true">02</div>
           <div class="strength-body">
             <h3 class="strength-title">設計から運用まで一貫対応</h3>
             <p class="strength-text">要件定義、設計、構築、テスト、運用保守まで全工程をワンストップで対応。担当者が変わらないため、スムーズなコミュニケーションを実現します。</p>
           </div>
         </div>
-        <div class="strength-item">
-          <div class="strength-number">03</div>
+        <div class="strength-item fade-in">
+          <div class="strength-number" aria-hidden="true">03</div>
           <div class="strength-body">
             <h3 class="strength-title">全国対応・福岡拠点</h3>
             <p class="strength-text">福岡を拠点に、全国の企業様へサービスを提供。20年以上にわたり北海道から沖縄まで、規模や業種を問わず100社以上のインフラ構築に携わってきました。</p>
@@ -169,13 +169,13 @@
       <p class="about-sign">代表取締役 加賀田 誠剛</p>
       <table class="info-table">
         <tbody>
-          <tr><th>会社名</th><td>テックインフォ株式会社</td></tr>
-          <tr><th>代表</th><td>加賀田 誠剛</td></tr>
-          <tr><th>創業</th><td>2024年8月</td></tr>
-          <tr><th>資本金</th><td>100万円</td></tr>
-          <tr><th>所在地</th><td>〒812-0011 福岡県福岡市博多区博多駅前1-23-2 ParkFront博多駅前1丁目5F-B</td></tr>
-          <tr><th>電話番号</th><td><a href="tel:07085163228">070-8516-3228</a></td></tr>
-          <tr><th>事業内容</th><td>ネットワークシステムの設計・構築・運用、セキュリティ対策、AI・DX支援</td></tr>
+          <tr><th scope="row">会社名</th><td>テックインフォ株式会社</td></tr>
+          <tr><th scope="row">代表</th><td>加賀田 誠剛</td></tr>
+          <tr><th scope="row">創業</th><td>2024年8月</td></tr>
+          <tr><th scope="row">資本金</th><td>100万円</td></tr>
+          <tr><th scope="row">所在地</th><td>〒812-0011 福岡県福岡市博多区博多駅前1-23-2 ParkFront博多駅前1丁目5F-B</td></tr>
+          <tr><th scope="row">電話番号</th><td><a href="tel:07085163228">070-8516-3228</a></td></tr>
+          <tr><th scope="row">事業内容</th><td>ネットワークシステムの設計・構築・運用、セキュリティ対策、AI・DX支援</td></tr>
         </tbody>
       </table>
     </div>
@@ -217,33 +217,44 @@
       var nav = document.getElementById('nav');
       toggle.addEventListener('click', function() {
         var expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
+        this.setAttribute('aria-expanded', String(!expanded));
+        this.setAttribute('aria-label', expanded ? 'メニューを開く' : 'メニューを閉じる');
         nav.classList.toggle('open');
       });
-      // Close menu on link click
       var links = nav.querySelectorAll('.nav-link');
       for (var i = 0; i < links.length; i++) {
         links[i].addEventListener('click', function() {
           toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'メニューを開く');
           nav.classList.remove('open');
         });
       }
     })();
 
-    // Scroll animation
+    // Scroll animation (respects prefers-reduced-motion)
     (function() {
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var targets = document.querySelectorAll('.fade-in');
+
+      if (prefersReducedMotion) {
+        for (var i = 0; i < targets.length; i++) {
+          targets[i].classList.add('visible');
+        }
+        return;
+      }
+
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-      document.querySelectorAll('.card, .strength-item, .number-item').forEach(function(el) {
-        el.classList.add('fade-in');
-        observer.observe(el);
-      });
+      for (var j = 0; j < targets.length; j++) {
+        observer.observe(targets[j]);
+      }
     })();
   </script>
 
