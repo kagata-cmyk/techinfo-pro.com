@@ -473,18 +473,39 @@ button:focus:not(:focus-visible) {
 }
 
 /* --- About --- */
-.about-message {
+.about-profile {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.about-photo {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text .about-message {
   margin-bottom: 24px;
+  max-width: none;
 }
 
 .about-sign {
   text-align: right;
   font-size: 0.9375rem;
   font-weight: 500;
-  margin-bottom: 48px;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 0;
 }
 
 .info-table {
@@ -639,6 +660,66 @@ button:focus:not(:focus-visible) {
   font-size: 0.875rem;
 }
 
+/* --- Cases --- */
+.cases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.case-card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 28px 24px;
+  border-top: 3px solid #4361ee;
+  transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.case-card:hover {
+  border-color: #4361ee;
+  box-shadow: 0 2px 12px rgba(67, 97, 238, 0.08);
+}
+
+.case-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4361ee;
+  border: 1px solid #4361ee;
+  border-radius: 2px;
+  padding: 2px 10px;
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+
+.case-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.case-detail {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+}
+
+.case-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4361ee;
+  padding-top: 2px;
+  line-height: 1.8;
+}
+
+.case-text {
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  color: #6c757d;
+}
+
 /* --- Scroll Animation --- */
 .fade-in {
   opacity: 0;
@@ -775,7 +856,27 @@ button:focus:not(:focus-visible) {
     padding: 16px 0;
   }
 
+  /* Cases */
+  .cases {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   /* About */
+  .about-profile {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .about-photo {
+    width: 160px;
+  }
+
+  .about-sign {
+    text-align: center;
+  }
+
   .info-table th {
     display: block;
     padding-bottom: 4px;
