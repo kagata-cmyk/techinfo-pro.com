@@ -409,6 +409,69 @@ button:focus:not(:focus-visible) {
   color: #6c757d;
 }
 
+/* --- Workflow --- */
+.workflow {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.workflow::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 18px;
+  bottom: 18px;
+  width: 1px;
+  background: #e9ecef;
+}
+
+.workflow-step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 20px 0;
+  position: relative;
+}
+
+.workflow-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #4361ee;
+  border-radius: 50%;
+  color: #4361ee;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.workflow-body {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.workflow-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.workflow-text {
+  font-size: 0.875rem;
+  line-height: 1.9;
+  color: #6c757d;
+}
+
 /* --- About --- */
 .about-message {
   margin-bottom: 24px;
@@ -705,6 +768,11 @@ button:focus:not(:focus-visible) {
   .strength-item {
     flex-direction: column;
     gap: 12px;
+  }
+
+  /* Workflow */
+  .workflow-step {
+    padding: 16px 0;
   }
 
   /* About */
