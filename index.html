@@ -4,10 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>テックインフォ株式会社 | ネットワーク設計・構築・運用</title>
-  <meta name="description" content="テックインフォ株式会社 - 20年以上の経験と100社以上の構築実績。ネットワークインフラの設計・構築・運用からAI・DX支援まで、福岡から全国のIT課題を解決します。">
+  <meta name="description" content="テックインフォ株式会社 - 20年以上の経験と100社以上の構築実績。ネットワークインフラの設計・構築・運用からセキュリティ・AI/DX支援まで、福岡から全国のIT課題を解決します。">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techinfo-pro.com/">
+  <meta property="og:title" content="テックインフォ株式会社 | ネットワーク設計・構築・運用">
+  <meta property="og:description" content="20年以上の経験と100社以上の構築実績。ネットワークインフラの設計・構築・運用からセキュリティ・AI/DX支援まで、福岡から全国のIT課題を解決します。">
+  <meta property="og:site_name" content="テックインフォ株式会社">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#16203a">
+
+  <!-- Favicon (inline SVG monogram) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316203a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' fill='%23b3925a' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +28,10 @@
   <!-- Header -->
   <header class="header" id="top">
     <div class="header-inner">
-      <a href="#top" class="logo">TECH INFO</a>
+      <a href="#top" class="logo">
+        <span class="logo-mark">T</span>
+        <span class="logo-text">TECH INFO</span>
+      </a>
       <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -25,18 +41,27 @@
         <a href="#workflow" class="nav-link">品質管理</a>
         <a href="#cases" class="nav-link">導入事例</a>
         <a href="#about" class="nav-link">会社情報</a>
-        <a href="#contact" class="nav-link">お問い合わせ</a>
+        <a href="#contact" class="nav-link nav-cta">お問い合わせ</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="hero">
+    <canvas class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-inner">
-      <p class="hero-label">Network Infrastructure & DX</p>
+      <p class="hero-label">Network Infrastructure &amp; DX</p>
       <h1 class="hero-title">True Tech Insights</h1>
       <p class="hero-sub">正確な情報と確かな技術で、<br>ネットワークインフラの未来を拓く。</p>
-      <a href="#contact" class="hero-cta">お問い合わせ</a>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">お問い合わせ</a>
+        <a href="#services" class="btn btn-ghost">サービスを見る</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="hero-scroll-line"></span>
     </div>
   </section>
 
@@ -45,12 +70,16 @@
     <div class="container">
       <div class="numbers">
         <div class="number-item fade-in">
-          <span class="number-value">20<span class="number-unit">年以上</span></span>
+          <span class="number-value"><span class="count" data-target="20">0</span><span class="number-unit">年以上</span></span>
           <span class="number-label">業界経験</span>
         </div>
         <div class="number-item fade-in">
-          <span class="number-value">100<span class="number-unit">社以上</span></span>
-          <span class="number-label">構築実績</span>
+          <span class="number-value"><span class="count" data-target="200">0</span><span class="number-unit">拠点超</span></span>
+          <span class="number-label">運用管理中</span>
+        </div>
+        <div class="number-item fade-in">
+          <span class="number-value"><span class="count" data-target="100">0</span><span class="number-unit">社以上</span></span>
+          <span class="number-label">累計の構築実績</span>
         </div>
         <div class="number-item fade-in">
           <span class="number-value">全国</span>
@@ -60,57 +89,61 @@
     </div>
   </section>
 
-  <!-- Greeting (A: rewritten) -->
+  <!-- Greeting -->
   <section class="section section-alt" id="greeting">
     <div class="container">
-      <h2 class="section-title">経験とテクノロジーの融合</h2>
-      <p class="section-text">
-        20年以上にわたり、全国の企業様のネットワークインフラを設計・構築してきました。何百台ものルーター、スイッチ、ファイアウォールに向き合う中で培った「現場の判断力」。いま、その経験にAIの力を掛け合わせています。
-      </p>
-      <p class="section-text">
-        設計書のレビューにはAIによる多角的チェックを標準で実施し、コンフィグ生成からセキュリティ監査まで、人間の経験判断とAIの網羅性を組み合わせた品質管理を実現しています。「一人だから小規模」ではなく、「全工程を知り尽くした人間がAIを使いこなす」。それがテックインフォの強みです。
-      </p>
-      <p class="section-text">
-        社名の「テックインフォ」は、ネットワーク機器で詳細な情報を取得するためのコマンドに由来しています。常に正確で信頼できる情報を提供するという想いを込めました。
-      </p>
+      <p class="section-eyebrow fade-in">Philosophy</p>
+      <h2 class="section-title fade-in">経験とテクノロジーの融合</h2>
+      <div class="prose">
+        <p class="section-text fade-in">
+          20年以上にわたり、全国の企業様のネットワークインフラを設計・構築してきました。何百台ものルーター、スイッチ、ファイアウォールに向き合う中で培った「現場の判断力」。いま、その経験にAIの力を掛け合わせています。
+        </p>
+        <p class="section-text fade-in">
+          設計書のレビューにはAIによる多角的チェックを標準で実施し、コンフィグ生成からセキュリティ監査まで、人間の経験判断とAIの網羅性を組み合わせた品質管理を実現しています。「一人だから、できることが限られる」のではありません。全工程を知り尽くした技術者が、AIの網羅性を使いこなす。それがテックインフォの品質です。
+        </p>
+        <p class="section-text fade-in">
+          社名の「テックインフォ」は、ネットワーク機器で詳細な情報を取得するためのコマンドに由来しています。常に正確で信頼できる情報を提供するという想いを込めました。
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Services (B: AI/DX card enhanced) -->
+  <!-- Services -->
   <section class="section" id="services">
     <div class="container">
-      <h2 class="section-title">サービス</h2>
-      <p class="section-lead">設計から運用まで、ITインフラのライフサイクル全体をカバーします。</p>
+      <p class="section-eyebrow fade-in">Services</p>
+      <h2 class="section-title fade-in">サービス</h2>
+      <p class="section-lead fade-in">設計から運用まで、ITインフラのライフサイクル全体をカバーします。</p>
       <div class="cards">
         <div class="card fade-in">
-          <div class="card-number" aria-hidden="true">1</div>
+          <div class="card-number" aria-hidden="true">01</div>
           <h3 class="card-title">ネットワーク設計・構築</h3>
           <p class="card-text">
-            SD-WANによる拠点間接続から、Wi-Fi 7対応の無線LAN環境まで。NEC、YAMAHA、Cisco、FortiGate等のマルチベンダー対応で、ゼロトラストを前提とした最適なネットワークアーキテクチャを設計・構築します。
+            拠点が増えても、機器が世代交代しても、「つながって当たり前」を止めない。SD-WANによる拠点間接続からWi-Fi 7対応の無線LANまで、NEC・YAMAHA・Cisco・FortiGateを横断対応。数年先の拡張まで見据え、ゼロトラスト前提の構成を設計します。
           </p>
           <ul class="card-list" aria-label="対応内容">
-            <li>SD-WAN / 拠点間VPN設計</li>
-            <li>Wi-Fi 7 無線LAN構築</li>
+            <li>拠点間VPN設計（IPsec/IKEv2・DMVPN・IPv6対応）</li>
+            <li>SD-WAN / Wi-Fi 7 無線LAN構築</li>
             <li>ゼロトラストネットワーク設計</li>
           </ul>
         </div>
         <div class="card fade-in">
-          <div class="card-number" aria-hidden="true">2</div>
+          <div class="card-number" aria-hidden="true">02</div>
           <h3 class="card-title">運用・保守</h3>
           <p class="card-text">
-            構築したネットワークの安定稼働を継続的にサポート。NDRによるトラフィック監視、コンフィグ管理、ファームウェア更新、脆弱性対応まで、日々の運用をトータルで支援します。
+            作って終わりにしない。NDRによるトラフィック監視、コンフィグ管理、ファームウェア更新、脆弱性対応を継続的に担い、障害の予兆を早期に捉えます。「動いていて当たり前」を、止めずに支え続けます。
           </p>
           <ul class="card-list" aria-label="対応内容">
-            <li>24/365 障害対応・NDR監視</li>
-            <li>脆弱性管理・パッチ適用</li>
-            <li>構成変更・パフォーマンス最適化</li>
+            <li>週次・月次セキュリティレポートを自動納品</li>
+            <li>24時間 死活監視・即時通知</li>
+            <li>脆弱性管理・構成変更・パフォーマンス最適化</li>
           </ul>
         </div>
         <div class="card fade-in">
-          <div class="card-number" aria-hidden="true">3</div>
+          <div class="card-number" aria-hidden="true">03</div>
           <h3 class="card-title">セキュリティ対策</h3>
           <p class="card-text">
-            NGFWやSASEの導入で、境界防御からゼロトラストへの移行を支援。脅威の可視化からOT/IoTセキュリティまで、包括的なセキュリティアーキテクチャを設計・運用します。
+            守るべきは、事業の継続そのもの。NGFW・SASEで境界防御からゼロトラストへ移行し、脅威の可視化からOT/IoTの保護まで対応。過剰でも手薄でもない、御社のリスクに見合ったセキュリティを設計・運用します。
           </p>
           <ul class="card-list" aria-label="対応内容">
             <li>NGFW / SASE導入・運用</li>
@@ -119,31 +152,59 @@
           </ul>
         </div>
         <div class="card fade-in">
-          <div class="card-number" aria-hidden="true">4</div>
+          <div class="card-number" aria-hidden="true">04</div>
           <h3 class="card-title">AI・DX支援</h3>
           <p class="card-text">
-            20年のインフラ経験に基づき、AIを活用した業務変革を支援します。ネットワーク設計のAIレビュー、管理業務の自動化基盤構築、セキュリティレポートの自動生成など、現場を知るエンジニアだからこそ実現できるDXを提案します。
+            現場を知るエンジニアだから描けるDXがある。20年のインフラ経験にAIを掛け合わせ、設計レビューの高度化、管理業務の自動化、セキュリティレポートの自動生成までを実装。流行りではなく、現場で効くものだけを提案します。
           </p>
           <ul class="card-list" aria-label="対応内容">
-            <li>AI活用による設計品質の向上</li>
-            <li>管理業務の統合自動化基盤構築</li>
-            <li>定期レポート自動生成</li>
+            <li>設計のAI合議レビュー（複数AIで相互検証）</li>
+            <li>セキュリティレポートの自動生成基盤</li>
+            <li>構成情報の一元管理・運用自動化</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Strengths (C: 4th item added) -->
-  <section class="section section-alt" id="strengths">
+  <!-- Industries & Vendors -->
+  <section class="section section-alt" id="industries">
     <div class="container">
-      <h2 class="section-title">選ばれる理由</h2>
+      <p class="section-eyebrow fade-in">Industries &amp; Vendors</p>
+      <h2 class="section-title fade-in">幅広い業種・機器に対応</h2>
+      <p class="section-lead fade-in">業種や規模、メーカーを問わず、最適なネットワークを設計・運用します。</p>
+      <div class="chips fade-in" aria-label="対応業種">
+        <span class="chip">ガソリンスタンドチェーン</span>
+        <span class="chip">病院・医療法人</span>
+        <span class="chip">ホテル・宿泊</span>
+        <span class="chip">製造業</span>
+        <span class="chip">水産・飲食</span>
+        <span class="chip">建設・通信</span>
+        <span class="chip">小売・サービス</span>
+      </div>
+      <div class="vendors-strip fade-in" aria-label="主な対応ベンダー">
+        <span class="vendor-label">Multi-Vendor</span>
+        <span class="vendor">NEC</span>
+        <span class="vendor">YAMAHA</span>
+        <span class="vendor">Fortinet</span>
+        <span class="vendor">Cisco</span>
+        <span class="vendor">TP-Link</span>
+        <span class="vendor">Sophos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section class="section" id="strengths">
+    <div class="container">
+      <p class="section-eyebrow fade-in">Why Us</p>
+      <h2 class="section-title fade-in">選ばれる理由</h2>
       <div class="strengths">
         <div class="strength-item fade-in">
           <div class="strength-number" aria-hidden="true">01</div>
           <div class="strength-body">
             <h3 class="strength-title">マルチベンダー対応</h3>
-            <p class="strength-text">NEC、YAMAHA、Cisco、FortiGate、NETGEAR など主要メーカーに精通。特定ベンダーに縛られず、要件に最適な機器を選定・設計します。</p>
+            <p class="strength-text">NEC、YAMAHA、Cisco、FortiGate、TP-Link、Sophos など主要メーカーに精通。特定ベンダーに縛られず、要件に最適な機器を選定・設計します。</p>
           </div>
         </div>
         <div class="strength-item fade-in">
@@ -157,7 +218,7 @@
           <div class="strength-number" aria-hidden="true">03</div>
           <div class="strength-body">
             <h3 class="strength-title">全国対応・福岡拠点</h3>
-            <p class="strength-text">福岡を拠点に、全国の企業様へサービスを提供。20年以上にわたり北海道から沖縄まで、規模や業種を問わず100社以上のインフラ構築に携わってきました。</p>
+            <p class="strength-text">福岡を拠点に、全国の企業様へサービスを提供。北海道から沖縄まで、業種や規模を問わず多様な現場に向き合ってきた経験が、初めての環境でも素早く勘所をつかむ対応力につながっています。</p>
           </div>
         </div>
         <div class="strength-item fade-in">
@@ -171,11 +232,12 @@
     </div>
   </section>
 
-  <!-- Workflow (D: new section) -->
-  <section class="section" id="workflow">
+  <!-- Workflow -->
+  <section class="section section-alt" id="workflow">
     <div class="container">
-      <h2 class="section-title">品質を支える仕組み</h2>
-      <p class="section-lead">経験豊富なエンジニアの判断力と、AIの網羅的な検証力。<br>二重のチェック体制で、設計ミスのない確実な導入を実現します。</p>
+      <p class="section-eyebrow fade-in">Quality Process</p>
+      <h2 class="section-title fade-in">品質を支える仕組み</h2>
+      <p class="section-lead fade-in">経験豊富なエンジニアの判断力と、AIの網羅的な検証力。<br>二重のチェック体制で、設計ミスのない確実な導入を実現します。</p>
       <div class="workflow">
         <div class="workflow-step fade-in">
           <div class="workflow-number" aria-hidden="true">1</div>
@@ -210,10 +272,11 @@
   </section>
 
   <!-- Cases -->
-  <section class="section section-alt" id="cases">
+  <section class="section" id="cases">
     <div class="container">
-      <h2 class="section-title">導入事例</h2>
-      <p class="section-lead">業種・規模を問わず、お客様のネットワーク課題を解決しています。</p>
+      <p class="section-eyebrow fade-in">Case Studies</p>
+      <h2 class="section-title fade-in">導入事例</h2>
+      <p class="section-lead fade-in">業種・規模を問わず、お客様のネットワーク課題を解決しています。</p>
       <div class="cases">
         <div class="case-card fade-in">
           <span class="case-tag">エネルギー</span>
@@ -255,22 +318,34 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
+  <!-- Large-Scale Migration -->
+  <section class="scale-band" id="scale">
     <div class="container">
-      <h2 class="section-title">会社情報</h2>
-      <div class="about-profile">
+      <div class="scale-inner fade-in">
+        <p class="section-eyebrow scale-eyebrow">Large-Scale</p>
+        <h2 class="scale-title">数千拠点規模の移行・更改にも対応</h2>
+        <p class="scale-text">回線サービスの終了や設備の老朽化に伴う、大規模ネットワークの移行・更改を計画します。影響範囲の洗い出しから切替方式の検証、段階移行の設計まで——「止められないネットワーク」を、計画的に、確実に次の世代へ引き継ぎます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <p class="section-eyebrow fade-in">Company</p>
+      <h2 class="section-title fade-in">会社情報</h2>
+      <div class="about-profile fade-in">
         <div class="about-photo">
           <img src="images/representative.jpg" alt="代表取締役 加賀田 誠剛" width="280" height="350" loading="lazy">
         </div>
         <div class="about-text">
-          <p class="section-text about-message">
+          <p class="about-message">
             福岡県出身の加賀田と申します。20年以上にわたり、全国の企業様のインフラ・ネットワーク構築に携わり、技術革新の波と共に歩んでまいりました。その経験を糧に、地元福岡でテックインフォ株式会社を創業いたしました。いま、長年の実務で培ったノウハウとAI技術を融合させ、少数精鋭でも妥協のない品質を提供できる体制を構築しています。お客様、パートナー、そして地域の皆様と共に、変わりゆく時代を力強く乗り越え、未来を切り拓いてまいります。
           </p>
-          <p class="about-sign">代表取締役 加賀田 誠剛</p>
+          <p class="about-sign"><span class="about-sign-role">代表取締役</span>加賀田 誠剛</p>
         </div>
       </div>
-      <table class="info-table">
+      <table class="info-table fade-in">
         <tbody>
           <tr><th scope="row">会社名</th><td>テックインフォ株式会社</td></tr>
           <tr><th scope="row">代表</th><td>加賀田 誠剛</td></tr>
@@ -284,15 +359,46 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="section" id="contact">
+  <!-- FAQ -->
+  <section class="section" id="faq">
     <div class="container">
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-text contact-text">
+      <p class="section-eyebrow fade-in">FAQ</p>
+      <h2 class="section-title fade-in">よくある質問</h2>
+      <div class="faq fade-in">
+        <details class="faq-item">
+          <summary>全国どこでも対応できますか？</summary>
+          <div class="faq-body"><p>はい。福岡を拠点に、北海道から沖縄まで全国対応しています。リモートでの設計・運用に加え、必要に応じて現地調査・作業にも伺います。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>小規模な案件でも依頼できますか？</summary>
+          <div class="faq-body"><p>もちろんです。ルーター1台の設定から全国数百拠点の運用まで、規模を問わず対応します。「まずは相談だけ」も歓迎します。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>見積もりは無料ですか？</summary>
+          <div class="faq-body"><p>はい。現状のヒアリングからお見積りまで無料です。ご予算や課題に合わせて、複数の選択肢をご提案します。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>担当者と連絡が取れなくなる心配はありませんか？</summary>
+          <div class="faq-body"><p>構成情報や設定はすべてドキュメントとして一元管理し、いつでも引き継げる状態を保っています。属人化を避ける仕組みづくりも、私たちが大切にしている品質の一部です。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>どんなメーカーの機器に対応していますか？</summary>
+          <div class="faq-body"><p>NEC、YAMAHA、Fortinet、Cisco、TP-Link、Sophos など主要メーカーに対応しています。特定ベンダーに縛られず、要件に最適な機器を選定します。</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <p class="section-eyebrow section-eyebrow-light fade-in">Contact</p>
+      <h2 class="section-title section-title-light fade-in">お問い合わせ</h2>
+      <p class="contact-text fade-in">
         ネットワーク環境の課題やDX推進について、まずはお気軽にご相談ください。<br>
         現状のヒアリングからお見積りまで、無料で対応いたします。
       </p>
-      <div class="contact-methods">
+      <div class="contact-methods fade-in">
         <a href="mailto:kagata@techinfo-pro.com" class="contact-item">
           <span class="contact-label">メール</span>
           <span class="contact-value">kagata@techinfo-pro.com</span>
@@ -308,7 +414,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p class="footer-copy">&copy; 2025 テックインフォ株式会社</p>
+      <p class="footer-copy">&copy; 2024&ndash;2026 テックインフォ株式会社</p>
       <a href="privacy-policy.html" class="footer-link">プライバシーポリシー</a>
     </div>
   </footer>
@@ -334,18 +440,26 @@
       }
     })();
 
-    // Scroll animation (respects prefers-reduced-motion)
+    // Header shadow on scroll
     (function() {
-      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var targets = document.querySelectorAll('.fade-in');
+      var header = document.querySelector('.header');
+      var onScroll = function() {
+        if (window.scrollY > 12) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
 
-      if (prefersReducedMotion) {
-        for (var i = 0; i < targets.length; i++) {
-          targets[i].classList.add('visible');
-        }
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Scroll fade-in (with stagger for grouped items)
+    (function() {
+      var targets = document.querySelectorAll('.fade-in');
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        for (var i = 0; i < targets.length; i++) targets[i].classList.add('visible');
         return;
       }
-
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
@@ -354,9 +468,128 @@
           }
         });
       }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      for (var j = 0; j < targets.length; j++) observer.observe(targets[j]);
+    })();
 
-      for (var j = 0; j < targets.length; j++) {
-        observer.observe(targets[j]);
+    // Count-up numbers
+    (function() {
+      var counters = document.querySelectorAll('.count');
+      if (!counters.length) return;
+      var run = function(el) {
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        if (prefersReducedMotion || !('requestAnimationFrame' in window)) {
+          el.textContent = String(target);
+          return;
+        }
+        var duration = 1400, start = null;
+        var step = function(ts) {
+          if (start === null) start = ts;
+          var p = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+          el.textContent = String(Math.round(eased * target));
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = String(target);
+        };
+        requestAnimationFrame(step);
+      };
+      if (!('IntersectionObserver' in window)) {
+        for (var i = 0; i < counters.length; i++) run(counters[i]);
+        return;
+      }
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { run(entry.target); obs.unobserve(entry.target); }
+        });
+      }, { threshold: 0.6 });
+      for (var k = 0; k < counters.length; k++) obs.observe(counters[k]);
+    })();
+
+    // Hero network canvas (subtle, premium)
+    (function() {
+      var canvas = document.querySelector('.hero-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var hero = document.querySelector('.hero');
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var nodes = [], w = 0, h = 0, raf = null, running = true;
+
+      var NAVY = '22, 32, 58';   // #16203a
+      var GOLD = '179, 146, 90'; // #b3925a
+
+      function size() {
+        w = hero.offsetWidth; h = hero.offsetHeight;
+        canvas.width = w * dpr; canvas.height = h * dpr;
+        canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        var count = Math.max(28, Math.min(64, Math.round((w * h) / 26000)));
+        nodes = [];
+        for (var i = 0; i < count; i++) {
+          nodes.push({
+            x: Math.random() * w, y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28,
+            r: Math.random() * 1.6 + 0.8,
+            gold: Math.random() < 0.18
+          });
+        }
+      }
+
+      function draw() {
+        if (!running) return;
+        ctx.clearRect(0, 0, w, h);
+        var maxDist = 132;
+        for (var i = 0; i < nodes.length; i++) {
+          var n = nodes[i];
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0 || n.x > w) n.vx *= -1;
+          if (n.y < 0 || n.y > h) n.vy *= -1;
+        }
+        for (var a = 0; a < nodes.length; a++) {
+          for (var b = a + 1; b < nodes.length; b++) {
+            var dx = nodes[a].x - nodes[b].x, dy = nodes[a].y - nodes[b].y;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < maxDist) {
+              var op = (1 - dist / maxDist) * 0.16;
+              ctx.strokeStyle = 'rgba(' + NAVY + ',' + op + ')';
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(nodes[a].x, nodes[a].y);
+              ctx.lineTo(nodes[b].x, nodes[b].y);
+              ctx.stroke();
+            }
+          }
+        }
+        for (var c = 0; c < nodes.length; c++) {
+          var nd = nodes[c];
+          ctx.beginPath();
+          ctx.arc(nd.x, nd.y, nd.r, 0, Math.PI * 2);
+          ctx.fillStyle = nd.gold ? 'rgba(' + GOLD + ',0.55)' : 'rgba(' + NAVY + ',0.40)';
+          ctx.fill();
+        }
+        raf = requestAnimationFrame(draw);
+      }
+
+      if (prefersReducedMotion) {
+        size();
+        // static single frame
+        running = true; draw(); running = false; if (raf) cancelAnimationFrame(raf);
+        return;
+      }
+
+      size();
+      draw();
+      var rt;
+      window.addEventListener('resize', function() {
+        clearTimeout(rt);
+        rt = setTimeout(size, 200);
+      });
+      // pause when hero off-screen
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) { if (!running) { running = true; draw(); } }
+            else { running = false; if (raf) cancelAnimationFrame(raf); }
+          });
+        }, { threshold: 0 }).observe(hero);
       }
     })();
   </script>
