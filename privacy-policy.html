@@ -15,11 +15,12 @@
 
   <title>プライバシーポリシー | テックインフォ株式会社</title>
   <meta name="description" content="テックインフォ株式会社のプライバシーポリシー。個人情報の取り扱いについて。">
-  <meta name="theme-color" content="#16203a">
+  <link rel="canonical" href="https://techinfo-pro.com/privacy-policy.html">
+  <meta name="theme-color" content="#0b1122">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316203a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' fill='%23b3925a' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,7 +32,10 @@
         <span class="logo-mark">T</span>
         <span class="logo-text">TECH INFO</span>
       </a>
-      <nav class="nav" id="nav">
+      <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav" aria-label="メインナビゲーション">
         <a href="index.html#services" class="nav-link">サービス</a>
         <a href="index.html#about" class="nav-link">会社情報</a>
         <a href="index.html#contact" class="nav-link nav-cta">お問い合わせ</a>
@@ -42,6 +46,7 @@
   <!-- Privacy Policy -->
   <section class="section privacy-section">
     <div class="container">
+      <p class="section-eyebrow">Privacy Policy</p>
       <h1 class="section-title">プライバシーポリシー</h1>
 
       <div class="privacy-content">
@@ -104,6 +109,21 @@
       <a href="index.html" class="footer-link">トップに戻る</a>
     </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    (function() {
+      var toggle = document.querySelector('.menu-toggle');
+      var nav = document.getElementById('nav');
+      toggle.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        this.setAttribute('aria-label', expanded ? 'メニューを開く' : 'メニューを閉じる');
+        nav.classList.toggle('open');
+        document.body.classList.toggle('nav-open', !expanded);
+      });
+    })();
+  </script>
 
 </body>
 </html>
